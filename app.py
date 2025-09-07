@@ -5,7 +5,7 @@ import os
 
 app = FastAPI()
 
-GEMINI_API_KEY = "AIzaSyBU-5UMs2DgexX2MwVionIXjMUJN043e1g"  # Replace with your actual API key
+GEMINI_API_KEY = "MyAPIKey"  # Replace with your actual API key
 GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
 
 class SummarizeRequest(BaseModel):
@@ -41,3 +41,4 @@ def summarize_text(request: SummarizeRequest):
     summary_text = data.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "")
 
     return {"summary": summary_text}
+
